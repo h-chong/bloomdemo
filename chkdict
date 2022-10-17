@@ -35,8 +35,9 @@ bf = pickle_load(gzip.GzipFile('dictbf.dat.gz', 'rb', 9))
 # FIXME: do something useful with this number?
 fp = bf.fprate()
 
+print('The false-positive rate is ', fp)
 for word in words_to_check:
     if bf.may_contain(word):
-        print(word, 'MIGHT BE in the dictionary... or it might not')
+        print(word, 'MIGHT BE in the dictionary... or it might not?')
     elif not skip_misses:
         print(word, 'is DEFINITELY NOT in the dictionary')
